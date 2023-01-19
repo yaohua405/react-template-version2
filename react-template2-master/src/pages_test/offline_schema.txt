@@ -1,0 +1,60 @@
+----------PRIMARY
+BASIC
+schema_basic{
+	name *
+	dob *
+	apply y/n *
+	sex *
+	ssn +
+}
+phone *
+email *
+
+CONTACT
+address *
+city *
+state *
+zip *
+migratory_status resident/citizen *
+residence_card # +
+
+
+INCOME
+income_type employed/self *
+employer_name *
+employer_phone *
+income *
+-----------PRIMARY
+
+FAMILY/HOUSEHOLD
+size (total family members) *
+applying *
+household_income * <- from FAMILY/HOSEHOLD
+members: SPOUSE/DEPENDENT/MEMBERS ARRAY
+
+SPOUSE/DEPENDENT/MEMBERS
+...SCHEMA_BASIC
+relation *
+migratory_status *
+#if (relation == 'spouse')
+	+INCOME
+#endif
+
+
+
+PLAN INFO
+plan_selected *
+montly_payment *
+household_income * -> inside FAMILY/HOSEHOLD
+
+
+CARD INFO
+number *
+exp *
+cvv *
+first_name *
+middle_name +
+last_name *
+
+
+

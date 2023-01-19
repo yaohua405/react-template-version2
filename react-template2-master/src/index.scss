@@ -1,0 +1,15 @@
+@import "@common/styles/index";
+@import "~react-big-calendar/lib/sass/styles.scss";
+
+table {
+	padding: get-space(1);
+	border-collapse: collapse;
+}
+
+th,
+td {
+	padding: get-space(1);
+	border: 1px solid get-color(neutral, $alpha: 0.3);
+	// border-top: 1px solid get-color(neutral, $alpha: .5);
+	// border-bottom: 1px solid get-color(neutral, $alpha: .5);
+}

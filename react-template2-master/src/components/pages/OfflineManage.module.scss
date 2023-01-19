@@ -1,0 +1,58 @@
+@import "@common/styles/globals";
+
+.table {
+	padding: get-space(1);
+	border-collapse: collapse;
+	th,
+	td {
+		padding: get-space(1);
+		border: 1px solid get-color(neutral, $alpha: 0.3);
+		// border-top: 1px solid get-color(neutral, $alpha: .5);
+		// border-bottom: 1px solid get-color(neutral, $alpha: .5);
+	}
+}
+.row {
+	& > td:first-of-type {
+		padding-left: 1em;
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0.6em;
+			height: 100%;
+		}
+	}
+	&.selected > td:first-of-type::after {
+		background: get-color(primary, $alpha: 1);
+	}
+	td {
+		// -moz-user-select: none;
+		// -webkit-user-select: none;
+		// -ms-user-select: none;
+		// -o-user-select: none;
+		user-select: none;
+		cursor: pointer;
+		background: get-color(primary, $alpha: 0.05);
+	}
+	&:hover td {
+		background: get-color(primary, $alpha: 0.1);
+	}
+	&.selected td {
+		background: get-color(primary, $alpha: 0.2);
+	}
+}
+
+.comp {
+	// My definitions by default
+
+	// @include use-theme using ($ts){
+	// 	// Theme Iterator
+	//  &#{$ts}{}
+	// 	@include use-color using ($cn, $c){
+	// 		// Color Iterator
+	//		&#{$ts}.#{$cn}{}
+	// 	}
+	// }
+}

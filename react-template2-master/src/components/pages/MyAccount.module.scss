@@ -1,0 +1,49 @@
+@import "@common/styles/globals";
+
+.section {
+	padding-inline: get-space(7);
+	display: inline-block;
+	max-width: 400px;
+	width: 100%;
+	position: relative;
+	&:not(:last-child) {
+		margin-bottom: get-space(2);
+	}
+}
+
+.change-photo {
+	@include background-color(primary, $alpha: 0.95);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: 0.25s;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.comp {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	text-align: center;
+	// My definitions by default
+
+	// @include use-theme using ($ts){
+	// 	// Theme Iterator
+	//  &#{$ts}{}
+	// 	@include use-color using ($cn, $c){
+	// 		// Color Iterator
+	//		&#{$ts}.#{$cn}{}
+	// 	}
+	// }
+}

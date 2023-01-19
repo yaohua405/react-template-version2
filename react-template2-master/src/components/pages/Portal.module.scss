@@ -1,0 +1,18 @@
+@import "@common/styles/globals";
+
+.drawer {
+	background: linear-gradient(75deg, #7b54a3, #df5395);
+}
+
+.comp {
+	// My definitions by default
+
+	// @include use-theme using ($ts){
+	// 	// Theme Iterator
+	//  &#{$ts}{}
+	// 	@include use-color using ($cn, $c){
+	// 		// Color Iterator
+	//		&#{$ts}.#{$cn}{}
+	// 	}
+	// }
+}

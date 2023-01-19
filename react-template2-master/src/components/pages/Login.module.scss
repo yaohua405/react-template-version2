@@ -1,0 +1,40 @@
+@import "@common/styles/globals";
+
+@keyframes back {
+	from {
+		background-position: 0% 100%;
+	}
+	to {
+		background-position: 100% 0%;
+	}
+}
+.comp {
+	// My definitions by default
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: linear-gradient(45deg, #7b54a3, #df5394);
+	background-size: 200% 200%;
+	animation: back 10s ease-in-out infinite alternate;
+
+	.container {
+		flex: 0 1 350px;
+		text-align: center;
+		border-radius: get-space(3);
+
+		padding: get-space(4);
+	}
+
+	@include use-theme using ($ts) {
+		// 	// Theme Iterator
+		&#{$ts} {
+			.container {
+				@include background-color(background, $alpha: 0.6);
+			}
+			// 	@include use-color using ($cn, $c){
+			// 		// Color Iterator
+			//		&#{$ts}.#{$cn}{}
+		}
+	}
+}
